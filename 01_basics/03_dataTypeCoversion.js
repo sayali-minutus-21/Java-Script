@@ -10,11 +10,13 @@ let bolamt=true;
 console.log(typeof amount);
 console.log(typeof(amount));
 
+//number to number
 let numamtInnumber=Number(numamt);//300
 console.log(typeof numamtInnumber);
 console.log(numamtInnumber);300
 
 //parsing data
+//String to number
 let amountInnumber=Number(amount)//abc250
 console.log(typeof amountInnumber);
 console.log(amountInnumber);//Nan not a number
