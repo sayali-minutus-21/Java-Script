@@ -1,6 +1,6 @@
 //immediately Invoked Function Expression(IIFe)
 
-(function test() {
+((){
     console.log(`Db connected`);
 })();//;used to end iife
 
