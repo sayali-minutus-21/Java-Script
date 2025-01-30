@@ -6,7 +6,7 @@
 
 #solution code
 
-## Project 1
+## Project 1 -Colour Switcher
 
 ```javascript
 const buttons=document.querySelectorAll('.button');
