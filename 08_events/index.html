@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Pictures</h2>
+    <div>
+        <!-- onclick="alert('parashoot')" -->
+        <ul id="images"> 
+            <li><img width="200px" id="para" src="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg?auto=compress&cs=tinysrgb&w=400" alt="parashoot" ></li>
+            <li><img width="200px" id="hibiscus" src="https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Hibiscus"></li>
+            <li><img width="200px" id="farm" src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=400" alt="farming"></li>
+            <li><img width="200px" id="mountain" src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=400" alt="mountain"></li>
+            <li id="google"><a style="color: aliceblue;" href="https://google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //all events executed sequentially
+    //old way to give alert
+    // document.getElementById('para').onclick=function(){
+    //     alert("parashoot!")
+    // }
+    //attachEvent()
+    //jQuery- onEventListener
+
+    //by new way by using addeventlister()
+    // document.getElementById('para').addEventListener('click',function(){
+    //     alert("parashoot")
+    // },false)
+
+    //event propagation(true or False)
+    //1.event bubbling(false)
+    //(bubbling up-false) down-->up
+      //false is default
+    //2.event capturing(true)
+    //(capturing down-true) up--->down
+  
+    //types of keyboard mouse and event
+    //timestamp
+    //defaultprevented=changes(holds) default behaviour
+    //target,toElement,srcElement,currentTarget
+    //clientX,clientY,screenX,screenY
+    //altkey,ctrlkey,shiftkey,keycode=speed
+
+    //Event Object(browser & environment event)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside ul");
+        
+    // },false)
+    
+    // document.getElementById('para').addEventListener('click',function(e){
+    //     console.log("clicked on parashoot");
+    //     e.stopPropagation()//used to stop propagation
+    // },false)//(bubbling up-false) down-->up
+
+    // document.getElementById('google').addEventListener('click',function e(){
+    //     console.log("google clicked");
+    //     e.stopPropagation()
+    // },false)
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName==='IMG') {
+            console.log(e.target.id);
+            let removeImage=e.target.parentNode
+            removeImage.remove()
+        }
+        
+        // removeImage.parentNode.removeChild(removeImage)
+    },false)
+</script>
+</html>
